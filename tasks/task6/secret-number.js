@@ -8,7 +8,7 @@ startGame();
 
 function chooseRandomNumber() {
     let randomNumber = Math.floor(Math.random() * (RANGE_END - RANGE_START ) + RANGE_START);
-    console.log("Компьютер 1 загадал число: 42.")
+    console.log(`Компьютер 1 загадал число: ${randomNumber}`);
     return randomNumber;
 }
 
