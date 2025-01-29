@@ -66,6 +66,53 @@
 2. Второй компьютер пытается угадать число.  
 - Для угадывания второй компьютер использует стратегию бинарного поиска: он начинает с середины возможного диапазона и уточняет диапазон в зависимости от подсказок (Больше/Меньше).
 #### [Мини-игра: Секретное число](https://github.com/Noikstrax/slonit-course-hometasks/tree/main/tasks/task6)
+```
+"use strict";
+
+const RANGE_START = 1;
+const RANGE_END = 100;
+
+startGame();
+
+
+function chooseRandomNumber() {
+    let randomNumber = Math.floor(Math.random() * (RANGE_END - RANGE_START ) + RANGE_START);
+    console.log(`Компьютер 1 загадал число: ${randomNumber}`);
+    return randomNumber;
+}
+
+function checkGuess(guessedNumber, choosedNumber) {
+    console.log(`Компьютер 2: Пробую число ${guessedNumber}.`)
+    if (guessedNumber > choosedNumber) {
+        console.log('Компьютер 1: Меньше.');
+        return 'less';
+    } else if (guessedNumber < choosedNumber) {
+        console.log('Компьютер 1: Больше.');
+        return 'more';
+    } else {
+        console.log('Компьютер 1: Угадал!');
+        return 'guessed';
+    }
+}
+
+function binarySearchGuessNumber(min, max, choosedNumber) {
+    let guessedNumber = Math.floor((min + max) / 2);
+
+    let guessResult = checkGuess(guessedNumber, choosedNumber);
+    if (guessResult == "guessed") {
+        return;
+    } else if (guessResult == "less") {
+        binarySearchGuessNumber(min, guessedNumber, choosedNumber);
+    } else if (guessResult == "more") {
+        binarySearchGuessNumber(guessedNumber, max, choosedNumber);
+    }
+}
+
+function startGame() {
+    let choosedNumber = chooseRandomNumber();
+    binarySearchGuessNumber(RANGE_START, RANGE_END, choosedNumber);
+}
+```
 
 
 
