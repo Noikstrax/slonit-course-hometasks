@@ -5,6 +5,7 @@
     - [Конфигурация git](#task-4-1)
     - [Работа с репозиторием](#task-4-2)
 - [Мини-игра: Секретное число](#task-6)
+- [Легкая тренировка в именовании](#task-8)
 
 ## <a id="task-4">Знакомство с разметкой md</a>
 ### <a id="task-4-1">Конфигурация git</a>
@@ -114,6 +115,21 @@ function startGame() {
 }
 ```
 
+
+## <a id="task-8">[Легкая тренировка в именовании](https://github.com/Noikstrax/slonit-course-hometasks/tree/main/tasks/task8)</a>
+
+```
+function getCustomersPurchasesSum(customersPurchases) {
+    let customersPurchasesSum = 0;
+    customersPurchases.forEach(customerPurchasesSum => {
+      customersPurchasesSum += customerPurchasesSum;
+    });
+    return customersPurchasesSum;
+  }
+  
+let customersPurchases = [10000, 20000, 30000];
+console.log(getCustomersPurchasesSum(customersPurchases));
+```
 
 
 
