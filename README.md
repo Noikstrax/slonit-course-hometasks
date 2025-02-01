@@ -133,7 +133,7 @@ console.log(getCustomersPurchasesSum(customersPurchases));
 ```
 
 
-## <a id="task-9">[Массивы и методы по работе с ними]</a>
+## <a id="task-9">[Массивы и методы по работе с ними](https://github.com/Noikstrax/slonit-course-hometasks/tree/main/tasks/task9)</a>
 
 ### [mySlice](https://github.com/Noikstrax/slonit-course-hometasks/tree/main/tasks/task9/mySlice)
 ```
