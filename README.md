@@ -6,6 +6,7 @@
     - [Работа с репозиторием](#task-4-2)
 - [Мини-игра: Секретное число](#task-6)
 - [Легкая тренировка в именовании](#task-8)
+- [Массивы и методы по работе с ними](#task-9)
 
 ## <a id="task-4">Знакомство с разметкой md</a>
 ### <a id="task-4-1">Конфигурация git</a>
@@ -132,7 +133,85 @@ console.log(getCustomersPurchasesSum(customersPurchases));
 ```
 
 
+## <a id="task-9">[Массивы и методы по работе с ними]</a>
 
+### [mySlice](https://github.com/Noikstrax/slonit-course-hometasks/tree/main/tasks/task9/mySlice)
+```
+"use strict";
+let array = ["t", "e", "s", "t"];
+function mySlice(array, start, end) {
+    let slicedArray = [];
+
+    if (start == undefined && end == undefined || start == 0 && end == undefined) return array;
+    if (start >= 0 && end == undefined) {
+        for (let i = start; i < array.length; i++) {
+            slicedArray.push(array[i]);
+        }
+    } else if (start < 0 && end == undefined) {
+        for (let i = start; i < 0; i++) {
+            slicedArray.push(array[array.length + i]);
+        }
+    } else if (start && end || start >= 0 && end) {
+        for (let i = start; i < end; i++) {
+            slicedArray.push(array[i]);
+        }
+    }
+    
+    return slicedArray;
+}
+
+alert(mySlice(array, 0)); // test
+alert(mySlice(array)); // test
+alert(mySlice(array, -3)); // est
+alert(mySlice(array, 1, 3)); // es
+alert(mySlice(array, 0, 3)) // tes
+```
+### [myIndexOf](https://github.com/Noikstrax/slonit-course-hometasks/tree/main/tasks/task9/myIndexOf)
+```
+let array = ['Яблоко', 'Апельсин', 'Яблоко', false];
+
+function myIndexOf(array, item, from = 0) {
+    let findedIndex = false;
+    if (from < 0) from = array.length + from;
+    for (let i = from; i < array.length; i++) {
+        if (array[i] === item) {
+            findedIndex = i;
+            break;
+        }
+    }
+    return findedIndex === false ? -1 : findedIndex;
+}
+
+console.log( myIndexOf(array, 'Яблоко')); // 0
+console.log( myIndexOf(array, 'Яблоко', 1)); // 2
+console.log( myIndexOf(array, 'Яблок2141о')); // -1
+console.log( myIndexOf(array, false)); // 3
+console.log( myIndexOf(array, false, -3)); // 3
+```
+
+### [myIncludes](https://github.com/Noikstrax/slonit-course-hometasks/tree/main/tasks/task9/myIncludes)
+
+```
+let array = ['Яблоко', 'Апельсин', 'Яблоко', false, NaN];
+
+function myIncludes(array, item, from = 0) {
+    let range = array.length;
+    if (from < 0) from = array.length + from;
+
+    for (let i = from; i < array.length; i++) {
+        if (isNaN(array[i]) && typeof(item) === 'number') return true;
+        if (array[i] === item) return true;
+    }
+    return false;
+}
+
+
+console.log( myIncludes(array, 'Яблоко')); // true
+console.log( myIncludes(array, 'Яблоко', 1)); // true
+console.log( myIncludes(array, false, -3)); // true
+console.log( myIncludes(array, NaN)); // true
+console.log( myIncludes(array, 'Яблоко', -1)); // false
+```
 
 
 
