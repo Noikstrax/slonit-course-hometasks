@@ -1,3 +1,5 @@
+"use strict";
+
 let array = ['Яблоко', 'Апельсин', 'Яблоко', false];
 
 function myIndexOf(array, item, from = 0) {

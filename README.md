@@ -168,6 +168,7 @@ alert(mySlice(array, 0, 3)) // tes
 ```
 ### [myIndexOf](https://github.com/Noikstrax/slonit-course-hometasks/tree/main/tasks/task9/myIndexOf)
 ```
+"use strict";
 let array = ['Яблоко', 'Апельсин', 'Яблоко', false];
 
 function myIndexOf(array, item, from = 0) {
@@ -192,6 +193,7 @@ console.log( myIndexOf(array, false, -3)); // 3
 ### [myIncludes](https://github.com/Noikstrax/slonit-course-hometasks/tree/main/tasks/task9/myIncludes)
 
 ```
+"use strict";
 let array = ['Яблоко', 'Апельсин', 'Яблоко', false, NaN];
 
 function myIncludes(array, item, from = 0) {

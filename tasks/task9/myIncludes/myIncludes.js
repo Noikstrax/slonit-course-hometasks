@@ -1,3 +1,4 @@
+"use strict";
 let array = ['Яблоко', 'Апельсин', 'Яблоко', false, NaN];
 
 function myIncludes(array, item, from = 0) {
