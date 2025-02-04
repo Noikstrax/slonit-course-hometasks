@@ -8,6 +8,8 @@
 - [Легкая тренировка в именовании](#task-8)
 - [Массивы и методы по работе с ними](#task-9)
 - [Повторяем объекты](#task-10)
+- [Работа со строками](#task-11)
+
 
 ## <a id="task-4">Знакомство с разметкой md</a>
 ### <a id="task-4-1">Конфигурация git</a>
@@ -271,7 +273,67 @@ console.log(objectMethods.getSortedByNumericNames(object));// likes, projects, f
 
 ```
 
+## <a id="task-11">[Работа со строками](https://github.com/Noikstrax/slonit-course-hometasks/tree/main/tasks/task11)</a>
 
+### [Задание 1](https://github.com/Noikstrax/slonit-course-hometasks/tree/main/tasks/task11/task11-1)
+```
+"use strict"
+function firstSymbolToUpperCase(str) {
+    if (!str) return str;
+    return str[0].toUpperCase() + str.slice(1);
+}
+
+let str = "hello";
+console.log(firstSymbolToUpperCase(str));
+```
+
+### [Задание 2](https://github.com/Noikstrax/slonit-course-hometasks/tree/main/tasks/task11/task11-2)
+```
+"use strict";
+
+function cutString(str, length) {
+    if (str.length > length) {
+        let string = str.slice(0, length);
+        let cutSymbols = [' ', ',', '.', '!', '?', ':', ';'];
+        let substringEnd = 0;
+        for (let symbol of cutSymbols) {
+            if (string.lastIndexOf(symbol) > substringEnd) {
+                substringEnd = string.lastIndexOf(symbol);
+            }
+        }
+        return string.slice(0, substringEnd) + "…";
+    } else {
+        return str;
+    }
+    
+
+}
+
+console.log(cutString('Вот, что мне хотелось бы сказать на эту тему:', 20)); // Вот, что мне…
+console.log(cutString('Всем привет!', 20)); // Всем привет
+```
+
+### [Задание 3](https://github.com/Noikstrax/slonit-course-hometasks/tree/main/tasks/task11/task11-3)
+
+
+```
+"use strict";
+
+function isMutualSubstring(str1, str2) {
+    return (str1.includes(str2)) ? true :
+    (str2.includes(str1)) ? true : false;
+}
+
+
+let string1 = 'Дверь машина собака';
+let string2 = 'машина';
+let string3 = 'Дом';
+
+console.log(isMutualSubstring(string1, string2)); // true
+console.log(isMutualSubstring(string2, string1)); // true
+
+console.log(isMutualSubstring(string1, string3)); // false
+```
 
 
 
