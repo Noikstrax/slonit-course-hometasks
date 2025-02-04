@@ -9,6 +9,7 @@
 - [Массивы и методы по работе с ними](#task-9)
 - [Повторяем объекты](#task-10)
 - [Работа со строками](#task-11)
+- [Функциональные выражения](#task-13)
 
 
 ## <a id="task-4">Знакомство с разметкой md</a>
@@ -334,7 +335,53 @@ console.log(isMutualSubstring(string2, string1)); // true
 
 console.log(isMutualSubstring(string1, string3)); // false
 ```
+## <a id="task-13">[Функциональные выражения](https://github.com/Noikstrax/slonit-course-hometasks/tree/main/tasks/task13)</a>
 
+### [Простой калькулятор](https://github.com/Noikstrax/slonit-course-hometasks/tree/main/tasks/task13)
+```
+"use strict";
+
+const operationMultiply = function (a, b) {
+    return a * b;
+};
+
+const operationDivide = function (a, b) {
+    return a / b;
+};
+
+const operationAdd = function (a, b) {
+    return a + b;
+};
+
+const operationSubtract = function (a, b) {
+    return a - b;
+};
+
+
+const operations = {
+    multiply: operationMultiply,
+    divide: operationDivide,
+    add: operationAdd,
+    subtract: operationSubtract
+};
+
+function calculate(a, b, operationFunction) {
+    return operationFunction(a, b);
+}
+
+let selectedOperation = "multiply";
+console.log(calculate(6, 3, operations[selectedOperation])); // 18
+
+selectedOperation = "add";
+console.log(calculate(6, 3, operations[selectedOperation])); // 9
+
+selectedOperation = "divide";
+console.log(calculate(6, 3, operations[selectedOperation])); // 2
+
+selectedOperation = "subtract";
+console.log(calculate(6, 3, operations[selectedOperation])); // 3
+
+```
 
 
 
