@@ -11,6 +11,7 @@
 - [Работа со строками](#task-11)
 - [Функциональные выражения](#task-13)
 - [Стрелочные функции](#task-14)
+- [Область видимости и замыкания](#task-15)
 
 
 ## <a id="task-4">Знакомство с разметкой md</a>
@@ -415,4 +416,50 @@ console.log(numbers); // [1, 2, 3, 4, 5]
 
 ```
 
+## <a id="task-15">[Область видимости и замыкания](https://github.com/Noikstrax/slonit-course-hometasks/tree/main/tasks/task15)</a>
+
+### [Логгер](https://github.com/Noikstrax/slonit-course-hometasks/tree/main/tasks/task15/task15-1)
+```
+"use strict";
+
+function createLogger() {
+        let logMessages = [];
+        return {
+            logSet(message) {
+                logMessages.push(message);
+            },
+            getLogs() {
+                for (let message of logMessages) {
+                    console.log(message);
+                }
+            },
+        }
+}
+
+let logger = createLogger();
+logger.logSet('Message1');
+logger.logSet('Message2');
+logger.getLogs(); // Message1, \n Message2 \n ...
+let logger2 = createLogger();
+console.log(logger2.getLogs()); // undefined;
+```
+
+
+### [Генератор случайных чисел из диапазона](https://github.com/Noikstrax/slonit-course-hometasks/tree/main/tasks/task15/task15-2)
+
+```
+"use strict";
+
+function createRandomGenerator(min, max) {
+    return function () {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+}
+
+let randomGenerator = createRandomGenerator(0, 10);
+console.log(randomGenerator());
+console.log(randomGenerator());
+console.log(randomGenerator());
+
+```
 
