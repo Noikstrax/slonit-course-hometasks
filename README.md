@@ -440,6 +440,7 @@ let logger = createLogger();
 logger.logSet('Message1');
 logger.logSet('Message2');
 logger.getLogs(); // Message1, \n Message2 \n ...
+
 let logger2 = createLogger();
 console.log(logger2.getLogs()); // undefined;
 ```
